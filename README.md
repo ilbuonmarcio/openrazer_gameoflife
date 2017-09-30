@@ -8,7 +8,7 @@
 - Python 3.x
 - NumPy library, available via pip
 
-After setting all this up, if you didn't do already, run this command:
+After setting all this up, if you didn't do it already, run this command:
 
   sudo gpasswd -a <YOURUSERNAME> plugdev
 
