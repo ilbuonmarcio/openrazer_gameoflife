@@ -76,10 +76,8 @@ while True:
             for row in range(rows):
                 for col in range(cols):
                     cell = [matrix[row][col]*255 for _ in range(0, 3)]
-                    print(cell)
                     device.fx.advanced.matrix[row, col] = cell
 
-            print("cycle")
 
             device.fx.advanced.draw()
         except:
