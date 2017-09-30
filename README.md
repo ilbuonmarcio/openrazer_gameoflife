@@ -10,7 +10,7 @@
 
 After setting all this up, if you didn't do it already, run this command:
 
-  sudo gpasswd -a <YOURUSERNAME> plugdev
+```sudo gpasswd -a <YOURUSERNAME> plugdev```
 
 and reboot your system in order to let the OpenRazer Driver to run properly.
 
