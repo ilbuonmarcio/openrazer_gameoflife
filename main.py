@@ -2,6 +2,7 @@ import colorsys
 import random
 import time
 import numpy as np
+import sys
 
 from openrazer.client import DeviceManager
 from openrazer.client import constants as razer_constants
@@ -65,21 +66,20 @@ def random_color():
     rgb = colorsys.hsv_to_rgb(random.uniform(0, 1), random.uniform(0.5, 1), 1)
     return tuple(map(lambda x: int(256 * x), rgb))
 
+if __name__ == "__main__":
+    while True:
+        for device in device_manager.devices:
+            try:
+                rows, cols = device.fx.advanced.rows, device.fx.advanced.cols
 
-while True:
-    for device in device_manager.devices:
-        try:
-            rows, cols = device.fx.advanced.rows, device.fx.advanced.cols
+                parse_matrix()
 
-            parse_matrix()
+                for row in range(rows):
+                    for col in range(cols):
+                        cell = [matrix[row][col]*255 for _ in range(0, 3)]
+                        device.fx.advanced.matrix[row, col] = cell
 
-            for row in range(rows):
-                for col in range(cols):
-                    cell = [matrix[row][col]*255 for _ in range(0, 3)]
-                    device.fx.advanced.matrix[row, col] = cell
-
-
-            device.fx.advanced.draw()
-        except:
-            pass
-    time.sleep(0.075)
+                device.fx.advanced.draw()
+            except:
+                pass
+        time.sleep(0.075)
