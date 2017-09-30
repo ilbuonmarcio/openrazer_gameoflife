@@ -19,13 +19,13 @@ and reboot your system in order to let the OpenRazer Driver to run properly.
 
 ### Usage:
 
-Run:
+Run the game:
 
-  python main.py
+```python main.py```
 
 Restore keyboard after usage:
 
-  python main.py reset
+```python main.py reset```
 
 #### Related Projects, Infos and Links:
 
