@@ -8,9 +8,6 @@ from openrazer.client import DeviceManager
 from openrazer.client import constants as razer_constants
 
 device_manager = DeviceManager()
-
-print("Found {} Razer Devices".format(len(device_manager.devices)))
-
 device_manager.sync_effects = False
 
 matrix = np.random.randint(2, size=(6, 22))
@@ -67,6 +64,22 @@ def random_color():
     return tuple(map(lambda x: int(256 * x), rgb))
 
 if __name__ == "__main__":
+
+    if "reset" in sys.argv:
+        for device in device_manager.devices:
+            try:
+                rows, cols = device.fx.advanced.rows, device.fx.advanced.cols
+
+                for row in range(rows):
+                    for col in range(cols):
+                        cell = [255, 255, 255]
+                        device.fx.advanced.matrix[row, col] = cell
+
+                device.fx.advanced.draw()
+            except:
+                pass
+            exit()
+
     while True:
         for device in device_manager.devices:
             try:
