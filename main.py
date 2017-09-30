@@ -78,7 +78,7 @@ if __name__ == "__main__":
                 device.fx.advanced.draw()
             except:
                 pass
-            exit()
+        exit()
 
     while True:
         for device in device_manager.devices:
