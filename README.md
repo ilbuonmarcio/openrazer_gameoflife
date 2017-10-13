@@ -10,7 +10,7 @@
 
 After setting all this up, if you didn't do it already, run this command:
 
-```sudo gpasswd -a <YOURUSERNAME> plugdev```
+``sudo gpasswd -a <YOURUSERNAME> plugdev``
 
 and reboot your system in order to let the OpenRazer Driver to run properly.
 
@@ -21,14 +21,14 @@ and reboot your system in order to let the OpenRazer Driver to run properly.
 
 Run the game:
 
-```python main.py```
+``python main.py``
 
 Restore keyboard after usage:
 
-```python main.py reset```
+``python main.py reset``
 
 #### Related Projects, Infos and Links:
 
-[My Python GameOfLife implementation]("https://github.com/marcioz98/pygameoflife")
+[My Python GameOfLife implementation](https://github.com/marcioz98/pygameoflife)
 
-[OpenRazer Website]("https://openrazer.github.io/")
+[OpenRazer Website](https://openrazer.github.io/)
