@@ -10,10 +10,22 @@ from openrazer.client import constants as razer_constants
 device_manager = DeviceManager()
 device_manager.sync_effects = False
 
-matrix = np.random.randint(2, size=(6, 22))
+counter = 0
+counter_limit = 100
+
+def init_matrix():
+    global matrix
+    matrix = np.random.randint(2, size=(6, 22))
 
 def parse_matrix():
     global matrix
+    global counter
+
+    counter += 1
+    if counter >= counter_limit:
+        counter = 0
+        init_matrix()
+
     temp_matrix = np.copy(matrix)
 
     for x in range(0, 6):
@@ -64,6 +76,8 @@ def random_color():
     return tuple(map(lambda x: int(256 * x), rgb))
 
 if __name__ == "__main__":
+
+    init_matrix()
 
     if "reset" in sys.argv:
         for device in device_manager.devices:
