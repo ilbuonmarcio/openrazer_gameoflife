@@ -7,6 +7,7 @@
 - openrazer-meta, available on AUR
 - Python 3.x
 - NumPy library, available via pip
+- linux-headers, available on pacman repository
 
 After setting all this up, if you didn't do it already, run this command:
 
