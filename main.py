@@ -86,7 +86,7 @@ if __name__ == "__main__":
 
                 for row in range(rows):
                     for col in range(cols):
-                        cell = [255, 255, 255]
+                        cell = [200, 200, 200]
                         device.fx.advanced.matrix[row, col] = cell
 
                 device.fx.advanced.draw()
@@ -103,7 +103,10 @@ if __name__ == "__main__":
 
                 for row in range(rows):
                     for col in range(cols):
-                        cell = [matrix[row][col]*255 for _ in range(0, 3)]
+                        if matrix[row][col] == 1:
+                            cell = random_color()
+                        else:
+                            cell = [0, 0, 0]
                         device.fx.advanced.matrix[row, col] = cell
 
                 device.fx.advanced.draw()
