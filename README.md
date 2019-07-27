@@ -28,8 +28,6 @@ Restore keyboard after usage:
 
 ``python main.py reset``
 
-#### Related Projects, Infos and Links:
-
-[My Python GameOfLife implementation](https://github.com/marcioz98/pygameoflife)
+##### This project is based on OpenRazer drivers
 
 [OpenRazer Website](https://openrazer.github.io/)
